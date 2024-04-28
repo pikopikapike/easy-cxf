@@ -103,6 +103,7 @@ public class CXFRestServer {
 //				new JsrJsonpProvider(),
                 new JacksonJsonProvider(),
                 new AssertExceptionMapper(),
+                new RuntimeExceptionMapper(),
                 new CrossOriginResourceSharingFilter()
         ));
         factory.getOutInterceptors().add(new JAXRSOutInterceptor());
@@ -111,7 +112,6 @@ public class CXFRestServer {
                 factory.getInInterceptors().add(interceptor);
             }
         }
-
 
 
         int corePoolSize = 4;
